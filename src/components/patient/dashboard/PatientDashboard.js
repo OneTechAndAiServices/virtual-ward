@@ -126,7 +126,6 @@ function PatientDashboard() {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    // Convert staticVitals into array of objects for Recharts
     const transformedData = staticVitals.dates.map((date, index) => ({
       date,
       Pulse: staticVitals.pulse[index],
