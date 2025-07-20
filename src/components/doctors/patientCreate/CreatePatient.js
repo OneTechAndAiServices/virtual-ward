@@ -554,7 +554,7 @@ import Swal from "sweetalert2";
 import ClipLoader from "react-spinners/ClipLoader";
 import { seeGreen } from "@/components/utils/Colors";
 
-const API_BASE = "http://api.virtual.gpline.ie/api/v0.1/Patient";
+const API_BASE = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/${process.env.NEXT_PUBLIC_API_VERSION}/Patient`;
 
 const GENDER = [
   { value: 1, label: "Male" },

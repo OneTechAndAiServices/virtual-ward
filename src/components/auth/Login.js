@@ -389,7 +389,7 @@ export default function Login() {
               // mx:12,
               margin: "auto",
               background: "rgba(255,255,255,0.97)",
-              boxShadow: "0 8px 36px 0 rgba(25,118,210,0.22)",
+              boxShadow: "0 8px 36px 0 rgba(10, 10, 10, 0.22)",
               position: "relative",
               overflow: "hidden",
             }}

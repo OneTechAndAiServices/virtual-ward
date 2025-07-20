@@ -12,7 +12,7 @@ import toast, { Toaster } from "react-hot-toast";
 import ClipLoader from "react-spinners/ClipLoader";
 import { seeGreen } from "@/components/utils/Colors";
 
-const API_BASE = "http://api.virtual.gpline.ie/api/v0.1/PatientNotes";
+const API_BASE = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/${process.env.NEXT_PUBLIC_API_VERSION}/PatientNotes`;
 const API_VERSION = "0.1"; // Adjust if needed
 
 const initialNote = {
@@ -65,7 +65,7 @@ function PatientNotes() {
   const fetchPatients = async () => {
     try {
       const token = getToken();
-      const { data } = await axios.get("http://api.virtual.gpline.ie/api/v0.1/Patient", {
+      const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/${process.env.NEXT_PUBLIC_API_VERSION}/Patient`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPatients(data.data || []);
@@ -78,7 +78,7 @@ function PatientNotes() {
   const fetchDoctors = async () => {
     try {
       const token = getToken();
-      const { data } = await axios.get("http://api.virtual.gpline.ie/api/v0.1/Doctor", {
+      const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/${process.env.NEXT_PUBLIC_API_VERSION}/Doctor`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setDoctors(data.data || []);

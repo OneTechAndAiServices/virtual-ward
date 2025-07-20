@@ -326,7 +326,7 @@ import { seeGreen } from "@/components/utils/Colors";
 import ClearIcon from "@mui/icons-material/Clear";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-const API_URL = "http://api.virtual.gpline.ie/api/v0.1/Vitals";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/${process.env.NEXT_PUBLIC_API_VERSION}/Vitals`;
 
 function VitalsHistory() {
   const [vitals, setVitals] = useState([]);

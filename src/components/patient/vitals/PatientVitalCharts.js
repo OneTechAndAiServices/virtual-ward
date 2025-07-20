@@ -244,7 +244,7 @@ import axios from "axios";
 import { seeGreen } from "@/components/utils/Colors";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
-const API_URL = "http://api.virtual.gpline.ie/api/v0.1/Vitals";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/${process.env.NEXT_PUBLIC_API_VERSION}/Vitals`;
 const COLORS = ["#00C49F", "#FFBB28", "#FF8042", "#8884d8", "#d32f2f"];
 
 function getToken() {

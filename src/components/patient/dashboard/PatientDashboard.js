@@ -352,7 +352,7 @@ import {
 } from "recharts";
 import { seeGreen } from "@/components/utils/Colors";
 
-const API_URL = "http://api.virtual.gpline.ie/api/v0.1/Vitals";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/${process.env.NEXT_PUBLIC_API_VERSION}/v0.1/Vitals`;
 
 function getPatientId() {
   if (typeof window !== "undefined") return localStorage.getItem("patientId");
