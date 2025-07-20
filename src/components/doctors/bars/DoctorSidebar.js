@@ -143,7 +143,7 @@ function DoctorSidebar() {
       </Box>
 
       {/* Logout */}
-      <Box textAlign="center" mt={3}>
+      <Box textAlign="center" mt={3} display={"flex"} flexDirection={"column"}>
         <Button
           variant="outlined"
           color="error"
@@ -153,6 +153,9 @@ function DoctorSidebar() {
         >
           Logout
         </Button>
+          <Typography fontSize={12} color="text.secondary" mt={2}>
+            © {new Date().getFullYear()} OneTechAndAI UK Corporation
+          </Typography>
       </Box>
     </Box>
   );

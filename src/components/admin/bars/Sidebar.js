@@ -2,7 +2,7 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   Dashboard,
   LocalHospital,
@@ -26,6 +26,7 @@ const sidebarItems = [
 
 function Sidebar() {
   const pathname = usePathname();
+    const router = useRouter();
   const handleLogout = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -97,7 +98,7 @@ function Sidebar() {
        </>
         );
       })}
-       <Box textAlign="center" display={"flex"} justifyContent={"center"} mx={1} mt={3}>
+       <Box textAlign="center" display={"flex"} flexDirection={"column"} justifyContent={"center"} mx={1} mt={3}>
         <Button
           variant="outlined"
           color="error"
@@ -107,6 +108,9 @@ function Sidebar() {
         >
           Logout
         </Button>
+          <Typography fontSize={12} color="text.secondary" mt={2}>
+            © {new Date().getFullYear()} OneTechAndAI UK Corporation
+          </Typography>
       </Box>
     </Box>
  </>
