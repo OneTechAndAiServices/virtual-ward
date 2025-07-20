@@ -2474,7 +2474,6 @@ function DoctorsManagement() {
         )}
       </Paper>
 
-      {/* Add/Edit Doctor Dialog */}
       <Dialog open={dialogOpen} onClose={handleDialogClose} maxWidth="sm" fullWidth>
         <form onSubmit={handleFormSubmit}>
           <DialogTitle>
