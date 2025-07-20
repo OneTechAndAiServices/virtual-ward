@@ -1873,11 +1873,11 @@
 //       <Typography fontWeight={700}>Question ID: <span style={{ fontWeight: 400 }}>{question.id}</span></Typography>
 //       <Typography fontWeight={700}>Text: <span style={{ fontWeight: 400 }}>{question.text}</span></Typography>
 //       <Grid container spacing={2} mt={1} mb={2}>
-//         <Grid item xs={12} md={6}><b>Sequence:</b> {question.sequence}</Grid>
-//         <Grid item xs={12} md={6}><b>Type:</b> {QUESTION_TYPES.find(t => t.value === question.questionType)?.label || question.questionType}</Grid>
-//         <Grid item xs={12} md={6}><b>Always Shown:</b> {question.isAlwaysShown ? "Yes" : "No"}</Grid>
-//         <Grid item xs={12} md={6}><b>Next Default QID:</b> {question.nextDefaultQuestionID}</Grid>
-//         <Grid item xs={12} md={6}><b>Questionnaire:</b> {questionnaires.find(qn => qn.id === question.questionnaireID)?.title}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Sequence:</b> {question.sequence}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Type:</b> {QUESTION_TYPES.find(t => t.value === question.questionType)?.label || question.questionType}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Always Shown:</b> {question.isAlwaysShown ? "Yes" : "No"}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Next Default QID:</b> {question.nextDefaultQuestionID}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Questionnaire:</b> {questionnaires.find(qn => qn.id === question.questionnaireID)?.title}</Grid>
 //       </Grid>
 //       <Divider sx={{ my: 2 }} />
 //       <Typography variant="subtitle1" fontWeight={700} mb={1}>Answers</Typography>
@@ -2118,7 +2118,7 @@
 //                       <>
 //                         {formik.values.answers.map((a, idx) => (
 //                           <Grid container spacing={2} key={idx} sx={{ borderBottom: "1px solid #f0f0f0", mb: 1 }}>
-//                             <Grid item xs={12} md={6}>
+//                             <Grid size={{xs:12,md:6}}>
 //                               <TextField
 //                                 label="ID"
 //                                 name={`answers[${idx}].id`}
@@ -2127,7 +2127,7 @@
 //                                 fullWidth
 //                               />
 //                             </Grid>
-//                             <Grid item xs={12} md={6}>
+//                             <Grid size={{xs:12,md:6}}>
 //                               <TextField
 //                                 label="Answer Text"
 //                                 name={`answers[${idx}].text`}
@@ -2138,7 +2138,7 @@
 //                                 fullWidth
 //                               />
 //                             </Grid>
-//                             <Grid item xs={12} md={6}>
+//                             <Grid size={{xs:12,md:6}}>
 //                               <TextField
 //                                 label="RAG"
 //                                 name={`answers[${idx}].rag`}
@@ -2148,7 +2148,7 @@
 //                                 fullWidth
 //                               />
 //                             </Grid>
-//                             <Grid item xs={12} md={6}>
+//                             <Grid size={{xs:12,md:6}}>
 //                               <TextField
 //                                 label="Next QID"
 //                                 name={`answers[${idx}].nextQuestionID`}
@@ -2158,7 +2158,7 @@
 //                                 fullWidth
 //                               />
 //                             </Grid>
-//                             <Grid item xs={12} md={6}>
+//                             <Grid size={{xs:12,md:6}}>
 //                               <TextField
 //                                 select
 //                                 label="Alert"
@@ -2173,7 +2173,7 @@
 //                                 ))}
 //                               </TextField>
 //                             </Grid>
-//                             <Grid item xs={12} md={6}>
+//                             <Grid size={{xs:12,md:6}}>
 //                               <TextField
 //                                 select
 //                                 label="Instruction"
@@ -2388,11 +2388,11 @@
 //       <Typography fontWeight={700} mb={1}>Question ID: <span style={{ fontWeight: 400 }}>{question.id}</span></Typography>
 //       <Typography fontWeight={700} mb={1}>Text: <span style={{ fontWeight: 400 }}>{question.text}</span></Typography>
 //       <Grid container spacing={2} mt={1} mb={2}>
-//         <Grid item xs={12} md={6}><b>Sequence:</b> {question.sequence}</Grid>
-//         <Grid item xs={12} md={6}><b>Type:</b> {QUESTION_TYPES.find(t => t.value === question.questionType)?.label || question.questionType}</Grid>
-//         <Grid item xs={12} md={6}><b>Always Shown:</b> {question.isAlwaysShown ? "Yes" : "No"}</Grid>
-//         <Grid item xs={12} md={6}><b>Next Default QID:</b> {question.nextDefaultQuestionID}</Grid>
-//         <Grid item xs={12} md={6}><b>Questionnaire:</b> {questionnaires.find(qn => qn.id === question.questionnaireID)?.title}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Sequence:</b> {question.sequence}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Type:</b> {QUESTION_TYPES.find(t => t.value === question.questionType)?.label || question.questionType}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Always Shown:</b> {question.isAlwaysShown ? "Yes" : "No"}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Next Default QID:</b> {question.nextDefaultQuestionID}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Questionnaire:</b> {questionnaires.find(qn => qn.id === question.questionnaireID)?.title}</Grid>
 //       </Grid>
 //       <Divider sx={{ my: 2 }} />
 //       <Button
@@ -2714,11 +2714,11 @@
 //       <Typography fontWeight={700} mb={1}>Question ID: <span style={{ fontWeight: 400 }}>{question.id}</span></Typography>
 //       <Typography fontWeight={700} mb={1}>Text: <span style={{ fontWeight: 400 }}>{question.text}</span></Typography>
 //       <Grid container spacing={2} mt={1} mb={2}>
-//         <Grid item xs={12} md={6}><b>Sequence:</b> {question.sequence}</Grid>
-//         <Grid item xs={12} md={6}><b>Type:</b> {QUESTION_TYPES.find(t => t.value === question.questionType)?.label || question.questionType}</Grid>
-//         <Grid item xs={12} md={6}><b>Always Shown:</b> {question.isAlwaysShown ? "Yes" : "No"}</Grid>
-//         <Grid item xs={12} md={6}><b>Next Default QID:</b> {question.nextDefaultQuestionID}</Grid>
-//         <Grid item xs={12} md={6}><b>Questionnaire:</b> {questionnaires.find(qn => qn.id === question.questionnaireID)?.title}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Sequence:</b> {question.sequence}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Type:</b> {QUESTION_TYPES.find(t => t.value === question.questionType)?.label || question.questionType}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Always Shown:</b> {question.isAlwaysShown ? "Yes" : "No"}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Next Default QID:</b> {question.nextDefaultQuestionID}</Grid>
+//         <Grid size={{xs:12,md:6}}><b>Questionnaire:</b> {questionnaires.find(qn => qn.id === question.questionnaireID)?.title}</Grid>
 //       </Grid>
 //       <Divider sx={{ my: 2 }} />
 //       <Button
@@ -3073,11 +3073,11 @@ export default function Questions() {
       <Typography fontWeight={700} mb={1}>Question ID: <span style={{ fontWeight: 400 }}>{question.id}</span></Typography>
       <Typography fontWeight={700} mb={1}>Text: <span style={{ fontWeight: 400 }}>{question.text}</span></Typography>
       <Grid container spacing={2} mt={1} mb={2}>
-        <Grid item xs={12} md={6}><b>Sequence:</b> {question.sequence}</Grid>
-        <Grid item xs={12} md={6}><b>Type:</b> {QUESTION_TYPES.find(t => t.value === question.questionType)?.label || question.questionType}</Grid>
-        <Grid item xs={12} md={6}><b>Always Shown:</b> {question.isAlwaysShown ? "Yes" : "No"}</Grid>
-        <Grid item xs={12} md={6}><b>Next Default QID:</b> {question.nextDefaultQuestionID}</Grid>
-        <Grid item xs={12} md={6}><b>Questionnaire:</b> {questionnaires.find(qn => qn.id === question.questionnaireID)?.title}</Grid>
+        <Grid size={{xs:12,md:6}}><b>Sequence:</b> {question.sequence}</Grid>
+        <Grid size={{xs:12,md:6}}><b>Type:</b> {QUESTION_TYPES.find(t => t.value === question.questionType)?.label || question.questionType}</Grid>
+        <Grid size={{xs:12,md:6}}><b>Always Shown:</b> {question.isAlwaysShown ? "Yes" : "No"}</Grid>
+        <Grid size={{xs:12,md:6}}><b>Next Default QID:</b> {question.nextDefaultQuestionID}</Grid>
+        <Grid size={{xs:12,md:6}}><b>Questionnaire:</b> {questionnaires.find(qn => qn.id === question.questionnaireID)?.title}</Grid>
       </Grid>
       <Divider sx={{ my: 2 }} />
       <Button
@@ -3100,12 +3100,12 @@ export default function Questions() {
         question.answers.map((a, idx) => (
           <Box key={idx} mb={1.5} p={1.5} sx={{ border: "1px solid #eee", borderRadius: 2, background: "#fcfcfc" }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} md={2}><b>ID:</b> {a.id}</Grid>
-              <Grid item xs={12} md={4}><b>Text:</b> {a.text}</Grid>
-              <Grid item xs={12} md={2}><b>RAG:</b> {a.rag}</Grid>
-              <Grid item xs={12} md={2}><b>Next QID:</b> {a.nextQuestionID}</Grid>
-              <Grid item xs={12} md={2}><b>Alert:</b> {alerts.find(al => al.id === a.alertID)?.text}</Grid>
-              <Grid item xs={12} md={2}><b>Instruction:</b> {instructions.find(ins => ins.id === a.instructionID)?.instructionText}</Grid>
+              <Grid size={{xs:12,md:2}}><b>ID:</b> {a.id}</Grid>
+              <Grid size={{xs:12,md:4}}><b>Text:</b> {a.text}</Grid>
+              <Grid size={{xs:12,md:2}}><b>RAG:</b> {a.rag}</Grid>
+              <Grid size={{xs:12,md:2}}><b>Next QID:</b> {a.nextQuestionID}</Grid>
+              <Grid size={{xs:12,md:2}}><b>Alert:</b> {alerts.find(al => al.id === a.alertID)?.text}</Grid>
+              <Grid size={{xs:12,md:2}}><b>Instruction:</b> {instructions.find(ins => ins.id === a.instructionID)?.instructionText}</Grid>
             </Grid>
           </Box>
         ))
@@ -3176,8 +3176,8 @@ export default function Questions() {
     return (
       <FormikProvider value={formik}>
         <form onSubmit={formik.handleSubmit} autoComplete="off">
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={8}>
+          <Grid container spacing={2} sx={{mt:2}}>
+            <Grid size={{xs:12,md:8}}>
               <TextField
                 label="Question Text"
                 name="text"
@@ -3189,7 +3189,7 @@ export default function Questions() {
                 required
               />
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{xs:12,md:4}}>
               <TextField
                 label="Sequence"
                 name="sequence"
@@ -3202,7 +3202,7 @@ export default function Questions() {
                 required
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{xs:12,md:6}}>
               <TextField
                 select
                 label="Type"
@@ -3219,7 +3219,7 @@ export default function Questions() {
                 ))}
               </TextField>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{xs:12,md:6}}>
               <TextField
                 select
                 label="Always Shown?"
@@ -3232,7 +3232,7 @@ export default function Questions() {
                 <MenuItem value="no">No</MenuItem>
               </TextField>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{xs:12,md:6}}>
               <TextField
                 label="Next Default Question ID"
                 name="nextDefaultQuestionID"
@@ -3242,7 +3242,7 @@ export default function Questions() {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{xs:12,md:6}}>
               <TextField
                 select
                 label="Questionnaire"
@@ -3276,7 +3276,7 @@ export default function Questions() {
                         elevation={0}
                       >
                         <Grid container spacing={2} alignItems="center">
-                          <Grid item xs={12} md={6}>
+                          <Grid size={{xs:12,md:6}}>
                             <TextField
                               label="Answer Text"
                               name={`answers[${idx}].text`}
@@ -3288,7 +3288,7 @@ export default function Questions() {
                               required
                             />
                           </Grid>
-                          <Grid item xs={12} md={3}>
+                          <Grid size={{xs:12,md:3}}>
                             <TextField
                               select
                               label="RAG"
@@ -3303,7 +3303,7 @@ export default function Questions() {
                               ))}
                             </TextField>
                           </Grid>
-                          <Grid item xs={12} md={3}>
+                          <Grid size={{xs:12,md:3}}>
                             <TextField
                               label="Next QID"
                               name={`answers[${idx}].nextQuestionID`}
@@ -3313,7 +3313,7 @@ export default function Questions() {
                               fullWidth
                             />
                           </Grid>
-                          <Grid item xs={12} md={3}>
+                          <Grid size={{xs:12,md:3}}>
                             <TextField
                               select
                               label="Alert"
@@ -3328,7 +3328,7 @@ export default function Questions() {
                               ))}
                             </TextField>
                           </Grid>
-                          <Grid item xs={12} md={3}>
+                          <Grid size={{xs:12,md:3}}>
                             <TextField
                               select
                               label="Instruction"
@@ -3343,7 +3343,7 @@ export default function Questions() {
                               ))}
                             </TextField>
                           </Grid>
-                          <Grid item xs={12} md={3}>
+                          <Grid size={{xs:12,md:3}}>
                             <Button
                               onClick={() => arrayHelpers.remove(idx)}
                               size="small"
@@ -3381,7 +3381,7 @@ export default function Questions() {
                 type="button"
                 onClick={onClose}
                 variant="outlined"
-                color="secondary"
+                color="error"
                 sx={{ mr: 2, borderRadius: 2, fontWeight: 600 }}
                 disabled={saving}
               >
@@ -3392,7 +3392,7 @@ export default function Questions() {
                 variant="contained"
                 disabled={saving}
                 startIcon={saving && <CircularProgress size={18} color="inherit" />}
-                sx={{ borderRadius: 2, textTransform: "none", fontWeight: 700 }}
+                sx={{ borderRadius: 2, textTransform: "none", fontWeight: 700 ,bgcolor:seeGreen}}
               >
                 {saving ? "Saving..." : "Update Question"}
               </Button>
@@ -3421,7 +3421,7 @@ export default function Questions() {
         <Typography variant="h4" fontWeight={600} color={seeGreen} fontSize={"26px"} mt={2}>
           Questions Management
         </Typography>
-        <Button href="/admin-add-new-questions">New Questions</Button>
+        <Button href="/admin-add-new-questions" variant="contained" sx={{bgcolor:seeGreen,textTransform:"none"}}>New Questions</Button>
       </Box>
       <Paper
         component={motion.div}

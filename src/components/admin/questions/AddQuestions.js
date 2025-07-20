@@ -1,12 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import {
-  Box, Button, Typography, Grid, TextField, MenuItem, Paper, CircularProgress, Chip
+  Box, Button, Typography, Grid, TextField, MenuItem, Paper, CircularProgress, Chip,
+  IconButton
 } from "@mui/material";
 import { useFormik, FieldArray, FormikProvider } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { seeGreen } from "@/components/utils/Colors";
+import { ArrowBack } from "@mui/icons-material";
 
 // --- ENUMS / DROPDOWN DATA ---
 const QUESTION_TYPES = [
@@ -140,9 +143,14 @@ const AddQuestions = () => {
 
   // --- Render ---
   return (
-    <Paper sx={{ maxWidth: 900, mx: "auto", mt: 4, p: 4, borderRadius: 3, boxShadow: 4 }}>
+    <Paper sx={{mx:1, mt: 4, p: 4, borderRadius: 3, boxShadow: 4 }}>
       <Toaster position="top-right" />
-      <Typography variant="h5" fontWeight={700} mb={3}>Add New Question</Typography>
+      <Box display={"flex"} alignItems={"center"} mb={2}>
+<IconButton href="/admin-questions-management" sx={{bgcolor:seeGreen,mr:2}}>
+    <ArrowBack sx={{color:"white",":hover":{color:"black"}}}/>
+</IconButton>
+      <Typography variant="h5" fontWeight={700} >Add New Question</Typography>
+      </Box>
       {loadingLookups ? (
         <Box display="flex" alignItems="center" justifyContent="center" py={8}>
           <CircularProgress size={40} color="primary" />
@@ -151,7 +159,7 @@ const AddQuestions = () => {
       <FormikProvider value={formik}>
         <form onSubmit={formik.handleSubmit} autoComplete="off">
           <Grid container spacing={2}>
-            <Grid item xs={12} md={8}>
+            <Grid size={{xs:12,md:8}}>
               <TextField
                 label="Question Text"
                 name="text"
@@ -163,7 +171,7 @@ const AddQuestions = () => {
                 required
               />
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{xs:12,md:4}}>
               <TextField
                 label="Sequence"
                 name="sequence"
@@ -176,7 +184,7 @@ const AddQuestions = () => {
                 required
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{xs:12,md:6}}>
               <TextField
                 select
                 label="Type"
@@ -193,7 +201,7 @@ const AddQuestions = () => {
                 ))}
               </TextField>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{xs:12,md:6}}>
               <TextField
                 select
                 label="Always Shown?"
@@ -206,7 +214,7 @@ const AddQuestions = () => {
                 <MenuItem value="no">No</MenuItem>
               </TextField>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{xs:12,md:6}}>
               <TextField
                 label="Next Default Question ID"
                 name="nextDefaultQuestionID"
@@ -218,7 +226,7 @@ const AddQuestions = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{xs:12,md:6}}>
               <TextField
                 select
                 label="Questionnaire"
@@ -237,7 +245,7 @@ const AddQuestions = () => {
             </Grid>
 
             {/* Answers Section */}
-            <Grid item xs={12}>
+            <Grid size={{xs:12}}>
               <Typography fontWeight="bold" mt={2} mb={1}>Answers</Typography>
               <FieldArray
                 name="answers"
@@ -255,7 +263,7 @@ const AddQuestions = () => {
                         elevation={0}
                       >
                         <Grid container spacing={2} alignItems="center">
-                          <Grid item xs={12} md={6}>
+                          <Grid size={{xs:12}}>
                             <TextField
                               label="Answer Text"
                               name={`answers[${idx}].text`}
@@ -267,7 +275,7 @@ const AddQuestions = () => {
                               required
                             />
                           </Grid>
-                          <Grid item xs={12} md={3}>
+                          <Grid size={{xs:12,md:4}}>
                             <TextField
                               select
                               label="RAG"
@@ -282,7 +290,7 @@ const AddQuestions = () => {
                               ))}
                             </TextField>
                           </Grid>
-                          <Grid item xs={12} md={3}>
+                          <Grid size={{xs:12,md:4}}>
                             <TextField
                               label="Next QID"
                               name={`answers[${idx}].nextQuestionID`}
@@ -292,7 +300,7 @@ const AddQuestions = () => {
                               fullWidth
                             />
                           </Grid>
-                          <Grid item xs={12} md={3}>
+                          {/* <Grid size={{xs:12,md:3}}>
                             <TextField
                               select
                               label="Alert"
@@ -307,7 +315,7 @@ const AddQuestions = () => {
                               ))}
                             </TextField>
                           </Grid>
-                          <Grid item xs={12} md={3}>
+                          <Grid size={{xs:12,md:3}}>
                             <TextField
                               select
                               label="Instruction"
@@ -321,8 +329,8 @@ const AddQuestions = () => {
                                 <MenuItem key={ins.id} value={ins.id}>{ins.instructionText}</MenuItem>
                               ))}
                             </TextField>
-                          </Grid>
-                          <Grid item xs={12} md={3}>
+                          </Grid> */}
+                          <Grid size={{xs:12,md:3}}>
                             <Button
                               onClick={() => arrayHelpers.remove(idx)}
                               size="small"
@@ -357,12 +365,12 @@ const AddQuestions = () => {
                 )}
               />
             </Grid>
-            <Grid item xs={12} textAlign="right">
+            <Grid size={{xs:12}} textAlign="right">
               <Button
                 type="button"
                 onClick={() => formik.resetForm()}
                 variant="outlined"
-                color="secondary"
+                color="error"
                 sx={{ mr: 2, borderRadius: 2, fontWeight: 600 }}
                 disabled={saving}
               >
@@ -373,7 +381,7 @@ const AddQuestions = () => {
                 variant="contained"
                 disabled={saving}
                 startIcon={saving && <CircularProgress size={18} color="inherit" />}
-                sx={{ borderRadius: 2, textTransform: "none", fontWeight: 700 }}
+                sx={{ borderRadius: 2, textTransform: "none",bgcolor:seeGreen, fontWeight: 600 }}
               >
                 {saving ? "Saving..." : "Create Question"}
               </Button>

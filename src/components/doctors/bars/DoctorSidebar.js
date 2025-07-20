@@ -29,7 +29,7 @@
 
 "use client";
 import React, { useState } from "react";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
@@ -111,8 +111,10 @@ function DoctorSidebar() {
 
       <Toaster position="top-right" />
 
-      {/* Nav Links */}
       <Box display="flex" flexDirection="column" gap={1}>
+            <Typography my={1} fontWeight={600} fontSize={22}>
+          Doctor
+        </Typography>
         {navLinks.map(({ label, path }) => {
           const isActive = pathname === path;
           return (

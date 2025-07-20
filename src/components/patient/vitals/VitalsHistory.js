@@ -296,6 +296,9 @@
 // }
 
 // export default VitalsHistory;
+
+
+
 "use client";
 import React, { useEffect, useState } from "react";
 import {
@@ -484,7 +487,7 @@ function VitalsHistory() {
                 </TableHead>
                 <TableBody>
                   {filteredVitals
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).reverse()
                     .map((v, i) => (
                       <TableRow key={v.id || i}>
                         <TableCell>{page * rowsPerPage + i + 1}</TableCell>

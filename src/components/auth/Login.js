@@ -343,6 +343,7 @@ export default function Login() {
       position="relative"
       sx={{
         display: "flex",
+        
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden"
@@ -361,12 +362,14 @@ export default function Login() {
           position: "absolute",
           top: 0, left: 0, width: "100vw", height: "100vh",
           zIndex: 0,
+          // padding:"20px",
           background: "linear-gradient(120deg, #05007a 0%, #4e98f8 55%, #87e0fd 100%)",
           backgroundSize: "200% 200%",
           // Uncomment for glassy look: filter: "blur(6px)",
         }}
       />
-
+<Box px={2}>
+  
       <Toaster position="top-center" />
 
       <AnimatePresence>
@@ -383,6 +386,7 @@ export default function Login() {
               p: { xs: 3, sm: 5 },
               borderRadius: 5,
               maxWidth: 480,
+              // mx:12,
               margin: "auto",
               background: "rgba(255,255,255,0.97)",
               boxShadow: "0 8px 36px 0 rgba(25,118,210,0.22)",
@@ -507,6 +511,7 @@ export default function Login() {
           </Paper>
         </motion.div>
       </AnimatePresence>
+</Box>
     </Box>
   );
 }

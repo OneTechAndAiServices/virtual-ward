@@ -112,12 +112,12 @@ const actions = [
     path: "/patient-vitals-charts",
     icon: <ShowChartIcon fontSize="large" sx={{ color: "#fff" }} />,
   },
-  {
-    title: "Vitals Alerts",
-    description: "Check abnormal readings and alerts",
-    path: "/vitals-alerts",
-    icon: <WarningAmberIcon fontSize="large" sx={{ color: "#fff" }} />,
-  },
+  // {
+  //   title: "Vitals Alerts",
+  //   description: "Check abnormal readings and alerts",
+  //   path: "/vitals-alerts",
+  //   icon: <WarningAmberIcon fontSize="large" sx={{ color: "#fff" }} />,
+  // },
 ];
 
 function MainVitals() {
