@@ -97,7 +97,6 @@ function Sidebar() {
        </>
         );
       })}
-    </Box>
        <Box textAlign="center" mt={3}>
         <Button
           variant="outlined"
@@ -109,6 +108,7 @@ function Sidebar() {
           Logout
         </Button>
       </Box>
+    </Box>
  </>
   );
 }
