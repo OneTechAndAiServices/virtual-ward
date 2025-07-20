@@ -2378,7 +2378,7 @@ function DoctorsManagement() {
           </Button>
         </Box>
       </motion.div>
-      {/* Table */}
+    
       <Paper
         elevation={2}
         sx={{
