@@ -192,6 +192,7 @@
 //     </Box>
 //   );
 // }
+
  "use client";
 import React, { useEffect, useState, useMemo } from "react";
 import {
@@ -313,7 +314,7 @@ export default function PatientHistoryAll() {
       toast.error("Patient ID not found!", { position: "top-center" });
       return;
     }
-    router.push(`/patients/${row.patientId}`);
+    router.push(`/doctor-patient-details/${row.patientId}`);
   };
 
   return (

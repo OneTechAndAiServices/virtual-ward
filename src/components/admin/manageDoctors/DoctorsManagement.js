@@ -2351,19 +2351,20 @@ function DoctorsManagement() {
   };
 
   return (
-    <Box sx={{ p: { xs: 1, md: 4 }, width: "100%" }}>
+    <Box  mt={2} mx={1}>
       <Toaster />
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: -32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-      >
+      > */}
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             mb: 2,
+            overflowX:"scroll"
           }}
         >
           <Typography variant="h4" fontWeight={700} color="primary">
@@ -2377,19 +2378,19 @@ function DoctorsManagement() {
             Add Doctor
           </Button>
         </Box>
-      </motion.div>
+      {/* </motion.div> */}
     
-      <Paper
-        elevation={2}
+      <Box
         sx={{
-          width: "100%",
-          overflow: "auto",
+          // width: "100%",
+          overflow: "scroll",
+          // maxWidth:"90%",
           minHeight: 320,
         }}
-        component={motion.div}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
+        // component={motion.div}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: 0.7 }}
       >
         {tableLoading ? (
           <Box sx={{ p: 4, display: "flex", justifyContent: "center" }}>
@@ -2409,8 +2410,8 @@ function DoctorsManagement() {
                   <TableCell>UserName</TableCell>
                   <TableCell>Email</TableCell>
                   <TableCell>Phone</TableCell>
-                  <TableCell>Status</TableCell>
-                  <TableCell>Gender</TableCell>
+                  {/* <TableCell>Status</TableCell>
+                  <TableCell>Gender</TableCell> */}
                   <TableCell align="right">Actions</TableCell>
                 </TableRow>
               </TableHead>
@@ -2433,7 +2434,7 @@ function DoctorsManagement() {
                       <TableCell>{doctor.user?.userName}</TableCell>
                       <TableCell>{doctor.user?.email}</TableCell>
                       <TableCell>{doctor.user?.phoneNumber || "-"}</TableCell>
-                      <TableCell>
+                      {/* <TableCell>
                         {
                           STATUS_OPTIONS.find(
                             (s) => s.value === doctor.status
@@ -2446,7 +2447,7 @@ function DoctorsManagement() {
                             (g) => g.value === doctor.gender
                           )?.label || doctor.gender
                         }
-                      </TableCell>
+                      </TableCell> */}
                       <TableCell align="right">
                         <Tooltip title="Edit">
                           <IconButton
@@ -2472,7 +2473,7 @@ function DoctorsManagement() {
             </Table>
           </TableContainer>
         )}
-      </Paper>
+      </Box>
 
       <Dialog open={dialogOpen} onClose={handleDialogClose} maxWidth="sm" fullWidth>
         <form onSubmit={handleFormSubmit}>
