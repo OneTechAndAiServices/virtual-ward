@@ -97,7 +97,7 @@ function Sidebar() {
        </>
         );
       })}
-       <Box textAlign="center" mt={3}>
+       <Box textAlign="center" display={"flex"} justifyContent={"center"} mx={1} mt={3}>
         <Button
           variant="outlined"
           color="error"
