@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -12,6 +12,8 @@ import {
   Info,
 } from "@mui/icons-material";
 import { lightGreen, seeGreen } from "@/components/utils/Colors";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const sidebarItems = [
   { label: "Dashboard", path: "/admin-dashboard", icon: <Dashboard /> },
@@ -24,7 +26,27 @@ const sidebarItems = [
 
 function Sidebar() {
   const pathname = usePathname();
-
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#2ecc71",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Logout!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.clear();
+        toast.success("Logged out successfully");
+        setLoading(true);
+        setTimeout(() => {
+          router.push("/");
+          setLoading(false);
+        }, 1000);
+      }
+    });
+  };
   return (
  <>
     <Box display="flex" flexDirection="column">
@@ -76,6 +98,17 @@ function Sidebar() {
         );
       })}
     </Box>
+       <Box textAlign="center" mt={3}>
+        <Button
+          variant="outlined"
+          color="error"
+          onClick={handleLogout}
+          fullWidth
+          sx={{ fontWeight: "bold", mt: 2 }}
+        >
+          Logout
+        </Button>
+      </Box>
  </>
   );
 }

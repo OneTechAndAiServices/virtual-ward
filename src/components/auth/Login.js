@@ -246,6 +246,8 @@
 //     </Box>
 //   );
 // }
+
+
 "use client";
 import React, { useState } from "react";
 import {
@@ -259,6 +261,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { ClipLoader } from "react-spinners";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation"; 
+import Link from "next/link";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 const API_VERSION = process.env.NEXT_PUBLIC_API_VERSION;
@@ -287,16 +290,30 @@ export default function Login() {
   };
 
   // Save all required user info in localStorage
-  function saveUserData({ token, roles, email, name, patientId }) {
-    localStorage.setItem("token", token);
-    localStorage.setItem("roles", JSON.stringify(roles));
-    localStorage.setItem("email", email);
-    localStorage.setItem("name", name);
-    if (patientId !== null && patientId !== undefined)
-      localStorage.setItem("patientId", patientId);
-    else
-      localStorage.removeItem("patientId");
-  }
+  // function saveUserData({ token, roles, email, name, patientId }) {
+  //   localStorage.setItem("token", token);
+  //   localStorage.setItem("roles", JSON.stringify(roles));
+  //   localStorage.setItem("email", email);
+  //   localStorage.setItem("name", name);
+  //   if (patientId !== null && patientId !== undefined)
+  //     localStorage.setItem("patientId", patientId);
+  //   else
+  //     localStorage.removeItem("patientId");
+  // }
+function saveUserData({ token, roles, email, name, patientId, doctorId }) {
+  localStorage.setItem("token", token);
+  localStorage.setItem("roles", JSON.stringify(roles));
+  localStorage.setItem("email", email);
+  localStorage.setItem("name", name);
+  if (patientId !== null && patientId !== undefined)
+    localStorage.setItem("patientId", patientId);
+  else
+    localStorage.removeItem("patientId");
+  if (doctorId !== null && doctorId !== undefined)
+    localStorage.setItem("doctorId", doctorId);
+  else
+    localStorage.removeItem("doctorId");
+}
 
   // Redirect based on role
   function redirectToDashboard(roles = []) {
@@ -383,7 +400,8 @@ export default function Login() {
           <Paper
             elevation={6}
             sx={{
-              p: { xs: 3, sm: 5 },
+              py:2,
+              px:3,
               borderRadius: 5,
               maxWidth: 480,
               // mx:12,
@@ -401,10 +419,8 @@ export default function Login() {
               <Typography variant="h4" fontWeight={700} color="primary" mb={1} letterSpacing={1.2}>
                 Virtual Ward
               </Typography>
-              <Typography variant="h4" fontSize={"24px"} fontWeight={700} color="primary" mb={1} letterSpacing={1.2}>
-                Welcome Back
-              </Typography>
-              <Typography color="text.secondary" fontSize={18} fontWeight={500}>
+          
+              <Typography color="text.secondary" fontSize={16} fontWeight={500}>
                 Sign in to your account
               </Typography>
             </Box>
@@ -504,10 +520,34 @@ export default function Login() {
                     >
                       {loading ? "Logging in..." : "Sign In"}
                     </Button>
+                  
                   </motion.div>
                 </Form>
               )}
             </Formik>
+            <Box mt={4}  textAlign="center">
+  <Typography fontSize={13} color="text.secondary">
+    © {new Date().getFullYear()} OneTechAndAI UK Corporation. All rights reserved.
+  </Typography>
+  <Typography fontSize={12} color="text.secondary" mt={0.4}>
+    Product of OneTechAndAI (Beta)
+  </Typography>
+  <Box mt={1}>
+    <Link
+      href="https://www.onetechandai.com/"
+      target="_blank"
+      rel="noopener"
+      fontWeight={600}
+   style={{color:"blue"}}
+      
+      underline="hover"
+      fontSize={13}
+    >
+      Visit OneTechAndAI.com
+    </Link>
+  </Box>
+</Box>
+
           </Paper>
         </motion.div>
       </AnimatePresence>

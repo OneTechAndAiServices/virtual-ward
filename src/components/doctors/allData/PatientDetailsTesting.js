@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from "react";
 import {
   Box, Typography, Paper, Table, TableHead, TableBody, TableCell,
-  TableRow, TableContainer, FormControl, MenuItem, Select, InputLabel, Stack
+  TableRow, TableContainer, FormControl, MenuItem, Select, InputLabel, Stack,
+  IconButton
 } from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
@@ -10,6 +11,7 @@ import { usePathname } from "next/navigation";
 import { ClipLoader } from "react-spinners";
 import PatientNotesSection from "./PatientNotesSection";
 import { seeGreen } from "@/components/utils/Colors";
+import { ArrowBack } from "@mui/icons-material";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "http://api.virtual.gpline.ie";
 const API_VERSION = process.env.NEXT_PUBLIC_API_VERSION || "v0.1";
@@ -60,10 +62,15 @@ export default function PatientDetailsTesting() {
   return (
     <Box sx={{ p: { xs: 2, md: 4 } }}>
       <Toaster />
-      <Typography variant="h4" fontWeight={600} color={seeGreen} fontSize={"26px"} mb={3}>
+      <Box display={"flex"} mb={3} alignItems={"center"} alignContent={'center'}>
+<IconButton href="/doctor-dashboard" sx={{bgcolor:seeGreen,mr:2}}>
+    <ArrowBack sx={{color:"white",":hover":{color:seeGreen}}}  />
+</IconButton>
+      <Typography variant="h4" fontWeight={600} color={seeGreen} fontSize={"26px"} >
         Patient Vitals Details (ID: {patientId})
       </Typography>
 
+      </Box>
       <Stack direction="row" alignItems="center" spacing={2} mb={2}>
         <FormControl size="small" sx={{ minWidth: 140 }}>
           <InputLabel>Show Latest</InputLabel>

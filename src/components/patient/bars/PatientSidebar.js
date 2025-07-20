@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import ClipLoader from "react-spinners/ClipLoader";
 import { seeGreen } from "@/components/utils/Colors";
+import Swal from "sweetalert2";
 
 const navLinks = [
   { label: "Dashboard", path: "/patient-dashboard" },
@@ -18,6 +19,28 @@ function PatientSidebar() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
+
+    const handleLogout = () => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You will be logged out!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#2ecc71",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Logout!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          localStorage.clear();
+          toast.success("Logged out successfully");
+          setLoading(true);
+          setTimeout(() => {
+            router.push("/");
+            setLoading(false);
+          }, 1000);
+        }
+      });
+    };
   const handleLinkClick = (path) => {
     if (pathname === path) {
       toast.success("You're already on this page");
@@ -88,6 +111,17 @@ function PatientSidebar() {
           );
         })}
       </Box>
+         <Box textAlign="center" mt={3}>
+              <Button
+                variant="outlined"
+                color="error"
+                onClick={handleLogout}
+                fullWidth
+                sx={{ fontWeight: "bold", mt: 2 }}
+              >
+                Logout
+              </Button>
+            </Box>
     </Box>
   );
 }
