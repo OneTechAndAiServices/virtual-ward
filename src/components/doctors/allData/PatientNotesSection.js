@@ -395,7 +395,7 @@ export default function PatientNotesSection({ patientId }) {
     }
   };
 
-  // Show top 'showCount' notes
+
   const displayedNotes = notes.slice(0, showCount);
 
   return (
