@@ -44,7 +44,7 @@ export default function PatientDetailsTesting() {
           }
         );
         let data = Array.isArray(res.data) ? res.data : [];
-        // Sort by latest first
+      
         data.sort((a, b) => new Date(b.recordedAt) - new Date(a.recordedAt));
         setVitals(data);
       } catch (err) {
