@@ -56,7 +56,6 @@ export default function PatientDetailsTesting() {
     fetchVitals();
   }, [patientId]);
 
-  // Only show "showCount" latest vitals
   const displayedVitals = vitals.slice(0, showCount);
 
   return (
