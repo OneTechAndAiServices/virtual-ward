@@ -16,7 +16,7 @@ import { ArrowBack } from "@mui/icons-material";
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "http://api.virtual.gpline.ie";
 const API_VERSION = process.env.NEXT_PUBLIC_API_VERSION || "v0.1";
 
-// Helper: get token from localStorage
+
 const getToken = () => {
   if (typeof window !== "undefined") return localStorage.getItem("token");
   return null;
